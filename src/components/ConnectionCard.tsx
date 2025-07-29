@@ -34,7 +34,7 @@ const getConnectionColor = (type: string) => {
 };
 
 const handleOAuthConnect = (type: string) => {
-  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+  const baseUrl = import.meta.env.VITE_API_URL || 'https://backendaidocs.vercel.app/';
   let url = '';
   if (type === 'google-drive' || type === 'google-docs') {
     url = `${baseUrl}/oauth/google/login`;
