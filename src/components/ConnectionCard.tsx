@@ -34,11 +34,12 @@ const getConnectionColor = (type: string) => {
 };
 
 const handleOAuthConnect = (type: string) => {
+  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
   let url = '';
   if (type === 'google-drive' || type === 'google-docs') {
-    url = '/oauth/google/login';
+    url = `${baseUrl}/oauth/google/login`;
   } else if (type === 'notion') {
-    url = '/oauth/notion/login';
+    url = `${baseUrl}/oauth/notion/login`;
   }
   if (url) {
     window.location.href = url;
